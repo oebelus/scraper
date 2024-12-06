@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const categories = ["coffee grinder", "laptops", "building blocks"];
+  const categories = ["coffee grinder", "laptops", "building blocks", "custom category"];
   
   return (
     <div className="w-64 bg-gray-800 text-white p-6">

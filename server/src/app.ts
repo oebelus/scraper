@@ -30,6 +30,8 @@ class App {
   private initializeMiddlewares() {
     this.express.use(cors());
     this.express.use(morgan("dev"));
+    this.express.use(express.json());
+    this.express.use(express.urlencoded({ extended: false }));
   }
 
   private initializeControllers(controllers: Controller[]) {

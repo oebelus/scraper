@@ -1,8 +1,30 @@
-# Project Setup
+# Ali Express Scraper
+
+This is AliExpress scraper that:
+
+1- Scrape from 3 categories:
+
+- Coffee Grinder
+- Laptops
+- Building Blocks
+
+![image 1](./media/1.png)
+
+You have the possibility to scrape them all -they are automatically saved in the database-, and then render each on of them in their corresponding section.
+
+2- Scrape custom categories:
+
+In the Custom Category Tab, you can scrape whatever category you want by inserting the category name and the number of items you want to retrieve.
+
+You can export generated data as a JSON format, or save it to your mongoDB database. Check the [JSON file](./products.json) for an example.
+
+![image 2](./media/2.png)
+
+## Project Setup
 
 Follow these steps to set up and run the project locally:
 
-## Client
+### Client
 
 1- Navigate to the `client` directory:
 
@@ -19,10 +41,10 @@ npm install
 3- Start the server
 
 ```bash
-npm run dev
+npm start
 ```
 
-## Server
+### Server
 
 1- Navigate to the server directory:
 

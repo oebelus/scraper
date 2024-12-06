@@ -4,6 +4,7 @@ import productModel from "./product.model";
 
 class ProductService {
   private product = productModel;
+  private scraper = new Scraper();
   private link = "https://www.aliexpress.com/w/wholesale-";
 
   private categories = {
@@ -35,25 +36,24 @@ class ProductService {
     }
   }
 
-  public async getProductById(id: string): Promise<Product | Error> {
-    try {
-      const product = await this.product.findById(id);
+  // public async getProductById(id: string): Promise<Product | Error> {
+  //   try {
+  //     const product = await this.product.findById(id);
 
-      if (!product) throw new HttpException(404, "Product not found");
-      return product;
-    } catch (error) {
-      throw new HttpException(400, (error as Error).message);
-    }
-  }
+  //     if (!product) throw new HttpException(404, "Product not found");
+  //     return product;
+  //   } catch (error) {
+  //     throw new HttpException(400, (error as Error).message);
+  //   }
+  // }
 
   public async scrapeAll() {
-    const scraper = new Scraper();
     const allProducts = [];
 
     try {
       for (const [category, url] of Object.entries(this.categories)) {
         console.log(`Scraping ${category}...`);
-        const products = await scraper.scrape(category, url, this.pages);
+        const products = await this.scraper.scrape(category, url, this.pages);
 
         for (const product of products) {
           product.category = category;
@@ -64,6 +64,62 @@ class ProductService {
       }
 
       return allProducts;
+    } catch (error) {
+      if (error instanceof HttpException) {
+        console.error((error as HttpException).message);
+      } else {
+        console.log(error);
+      }
+    }
+  }
+
+  public async scrapeByCategory(category: string, n: number) {
+    try {
+      this.link = `${this.link}${category}.html`;
+      console.log(`Link: ${this.link}`);
+      const products = await this.scraper.scrape(
+        category,
+        this.link,
+        this.pages,
+        n
+      );
+
+      for (const product of products) {
+        product.category = category;
+        await this.product.create(product);
+      }
+
+      return products;
+    } catch (error) {
+      if (error instanceof HttpException) {
+        console.error((error as HttpException).message);
+      } else {
+        console.log(error);
+      }
+    }
+  }
+
+  public async getAllCategories() {
+    try {
+      console.log("Fetching unique categories...");
+      const categories = await this.product.distinct("category");
+
+      console.log("Unique categories:", categories);
+      return categories;
+    } catch (error) {
+      if (error instanceof HttpException) {
+        console.error((error as HttpException).message);
+      } else {
+        console.log(error);
+      }
+    }
+  }
+
+  public async saveAllProducts(products: Product[]) {
+    try {
+      for (const product of products) {
+        await this.product.create(product);
+      }
     } catch (error) {
       if (error instanceof HttpException) {
         console.error((error as HttpException).message);

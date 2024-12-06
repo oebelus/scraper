@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import "./index.css";
 import Category from "./pages/Category";
 import ProductPage from "./pages/ProductPage";
+import CustomCategory from "./pages/CustomCategory";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
             <Route path="/coffee-grinder" element={<Category title="Coffee Grinder" />} />
             <Route path="/laptops" element={<Category title="Laptops" />} />
             <Route path="/building-blocks" element={<Category title="Building Blocks" />} />
+            <Route path="/custom-category" element={<CustomCategory />} />
             <Route path="/product/:id" element={<ProductPage />} />
           </Routes>
         </div>

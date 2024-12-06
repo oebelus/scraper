@@ -33,23 +33,39 @@ const Category = ({ title }: CategoryProps) => {
         fetchProductsByCategory();
     }, [title]);
 
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
-
     return (
         <div>
             {loading && <p>Loading...</p>}
-            <div className="flex gap-4 mt-4 mb-10">
+            <div className="flex flex-col gap-4 mt-4 mb-10">
                 <button
                     onClick={scrapeData}
                     className="px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 transition-all"
                 >
-                    Scrape All
+                    Scrape All the 3 categories
                 </button>
             </div>
 
             <h2 className="text-2xl font-bold mb-4">{title}</h2>
+
+            {/* Export JSON */}
+            {data.length > 0 && (
+                <button
+                    onClick={() => {
+                        const json = JSON.stringify(data, null, 2);
+                        const blob = new Blob([json], { type: "application/json" });
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement("a");
+                        link.href = url;
+                        link.download = `products.json`;
+                        link.click();
+                        URL.revokeObjectURL(url);
+                    }}
+                    className="mb-4 bg-gray-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-gray-700 transition-all"
+                >
+                    Export JSON
+                </button>
+            ) }
+
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {data.map((product, index) => (
