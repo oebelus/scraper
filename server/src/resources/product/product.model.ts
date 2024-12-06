@@ -19,6 +19,13 @@ const productSchema = new Schema({
       duration: { type: String },
     },
   ],
+  rating: [
+    {
+      rate: { type: String },
+      reviews: { type: String },
+      sold: { type: String },
+    },
+  ],
 });
 
 const Product = mongoose.model<Product>("Product", productSchema);

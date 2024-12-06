@@ -81,6 +81,20 @@ class Scraper {
                     ?.textContent?.trim() || "N/A",
               },
             ],
+            rating: {
+              rate:
+                document
+                  .querySelector(".rating--wrap--jg9uoRp")
+                  ?.textContent?.trim() || "N/A",
+              reviews:
+                document
+                  .querySelector(".reviewer--reviews--cx7Zs_V")
+                  ?.textContent?.trim() || "N/A",
+              sold:
+                document
+                  .querySelector(".reviewer--sold--ytPeoEy")
+                  ?.textContent?.trim() || "N/A",
+            },
           }));
         }, category);
 
@@ -227,6 +241,20 @@ class Scraper {
                   ?.textContent?.trim() || "In Stock",
             },
           ],
+          rating: {
+            rate:
+              document
+                .querySelector(".rating--wrap--jg9uoRp")
+                ?.textContent?.trim() || "N/A",
+            reviews:
+              document
+                .querySelector(".reviewer--reviews--cx7Zs_V")
+                ?.textContent?.trim() || "N/A",
+            sold:
+              document
+                .querySelector(".reviewer--sold--ytPeoEy")
+                ?.textContent?.trim() || "N/A",
+          },
         };
       });
 

@@ -6,6 +6,7 @@ type Product = {
   category: string;
   offers: Offer[];
   shipping: Shipping[];
+  rating: Rating;
 };
 
 type Shipping = {
@@ -18,4 +19,10 @@ type Offer = {
   storeName?: string;
   price: string;
   availability: string;
+};
+
+type Rating = {
+  rate: string;
+  reviews: string;
+  sold: string;
 };

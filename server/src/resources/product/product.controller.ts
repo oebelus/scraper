@@ -71,10 +71,10 @@ class ProductController implements Controller {
     try {
       const id = req.params.id;
       console.log(id);
-      // const product = await this.productService.getProductById(id);
-      // console.log("Controller - Fetched Product:", product);
-      // console.log(product);
-      // res.status(200).json(product);
+      const product = await this.productService.getProductById(id);
+      console.log("Controller - Fetched Product:", product);
+      console.log(product);
+      res.status(200).json(product);
     } catch (error) {
       next(error);
     }

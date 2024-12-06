@@ -36,16 +36,16 @@ class ProductService {
     }
   }
 
-  // public async getProductById(id: string): Promise<Product | Error> {
-  //   try {
-  //     const product = await this.product.findById(id);
+  public async getProductById(id: string): Promise<Product | Error> {
+    try {
+      const product = await this.product.findById(id);
 
-  //     if (!product) throw new HttpException(404, "Product not found");
-  //     return product;
-  //   } catch (error) {
-  //     throw new HttpException(400, (error as Error).message);
-  //   }
-  // }
+      if (!product) throw new HttpException(404, "Product not found");
+      return product;
+    } catch (error) {
+      throw new HttpException(400, (error as Error).message);
+    }
+  }
 
   public async scrapeAll() {
     const allProducts = [];

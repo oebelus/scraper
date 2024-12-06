@@ -20,6 +20,21 @@ You can export generated data as a JSON format, or save it to your mongoDB datab
 
 ![image 2](./media/2.png)
 
+## The data scraped
+
+- [x] Name
+- [x] Price
+- [x] Image URL
+- [x] Article URL
+- [x] Shipping:
+  - [x] Shipping Price
+  - [x] Shipping Time
+- [x] Store Name
+- [x] Availability / Number of Items you can purchase
+- [ ] Rating
+  - [ ] Number of Reviews
+  - [ ] Rating number out of 5
+
 ## Project Setup
 
 Follow these steps to set up and run the project locally:
