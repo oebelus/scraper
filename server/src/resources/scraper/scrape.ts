@@ -43,57 +43,22 @@ class Scraper {
             category: cat,
             offers: [
               {
-                storeName:
-                  product
-                    .querySelector(
-                      "div.store-detail--storeNameWrap--Z45gRHH span.store-detail--storeName--Lk2FVZ4"
-                    )
-                    ?.textContent?.trim() || "",
-                price:
-                  product
-                    .querySelector(
-                      "div.price--current--I3Zeidd span.price--currentPriceText--V8_y_b5"
-                    )
-                    ?.textContent?.trim() || "",
-                availability:
-                  product
-                    .querySelector(
-                      ".div.comet-v2-input-number.quantity--picker--OaDgLYT"
-                    )
-                    ?.textContent?.trim() || "In Stock",
+                storeName: "",
+                price: "",
+                availability: "In Stock",
               },
             ],
             shipping: [
               {
-                type:
-                  product
-                    .querySelector(".multi--serviceContainer--3vRdzWN")
-                    ?.textContent?.trim() || "Not specified",
-                cost:
-                  product
-                    .querySelector(".multi--serviceContainer--3vRdzWN")
-                    ?.textContent?.trim() || "",
-                duration:
-                  product
-                    .querySelector(
-                      "div.dynamic-shipping-line.dynamic-shipping-contentLayout span"
-                    )
-                    ?.textContent?.trim() || "N/A",
+                type: "At Home Delivery",
+                cost: "",
+                duration: "",
               },
             ],
             rating: {
-              rate:
-                document
-                  .querySelector(".rating--wrap--jg9uoRp")
-                  ?.textContent?.trim() || "N/A",
-              reviews:
-                document
-                  .querySelector(".reviewer--reviews--cx7Zs_V")
-                  ?.textContent?.trim() || "N/A",
-              sold:
-                document
-                  .querySelector(".reviewer--sold--ytPeoEy")
-                  ?.textContent?.trim() || "N/A",
+              rate: "",
+              reviews: "",
+              sold: "",
             },
           }));
         }, category);
@@ -244,15 +209,19 @@ class Scraper {
           rating: {
             rate:
               document
-                .querySelector(".rating--wrap--jg9uoRp")
+                .querySelector("div.reviewer--box--wVguYsD strong")
                 ?.textContent?.trim() || "N/A",
             reviews:
               document
-                .querySelector(".reviewer--reviews--cx7Zs_V")
+                .querySelector(
+                  "div.reviewer--box--wVguYsD a.reviewer--reviews--cx7Zs_V"
+                )
                 ?.textContent?.trim() || "N/A",
             sold:
               document
-                .querySelector(".reviewer--sold--ytPeoEy")
+                .querySelector(
+                  "div.reviewer--box--wVguYsD span.reviewer--sold--ytPeoEy"
+                )
                 ?.textContent?.trim() || "N/A",
           },
         };

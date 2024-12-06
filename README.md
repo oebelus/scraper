@@ -31,9 +31,14 @@ You can export generated data as a JSON format, or save it to your mongoDB datab
   - [x] Shipping Time
 - [x] Store Name
 - [x] Availability / Number of Items you can purchase
-- [ ] Rating
-  - [ ] Number of Reviews
-  - [ ] Rating number out of 5
+- [x] Rating
+  - [x] Number of Reviews
+  - [x] Rating number out of 5
+  - [x] Number of Items Sold
+
+## To-Do
+
+- [ ] Find a better solution for the I'am not a robot checkbox.
 
 ## Project Setup
 

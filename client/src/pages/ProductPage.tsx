@@ -94,6 +94,22 @@ const ProductPage = () => {
               <p>No shipping details available.</p>
             )}
           </div>
+
+          <div className="mt-6">
+            <h2 className="text-xl font-semibold mb-2">Rating</h2>
+            <div className="p-4 bg-gray-700 rounded-md shadow-sm mb-2">
+              <p>
+                <span className="font-bold">Rate:</span> {product.rating[0].rate}
+              </p>
+              <p>
+                <span className="font-bold">Reviews:</span>{" "}
+                {product.rating[0].reviews}
+              </p>
+              <p>
+                <span className="font-bold">Sold:</span> {product.rating[0].sold}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

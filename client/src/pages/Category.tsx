@@ -41,7 +41,7 @@ const Category = ({ title }: CategoryProps) => {
                     onClick={scrapeData}
                     className="px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 transition-all"
                 >
-                    Scrape All the 3 categories
+                    Scrape the first 2 pages of the 3 categories (It takes a long time)
                 </button>
             </div>
 
@@ -101,13 +101,13 @@ const Category = ({ title }: CategoryProps) => {
                         ))}
                     </div>
                     <div>
+                        <div className="flex flex-col">
+                            <span className={`${product.rating[0].sold === "N/A" ? "hidden": ""}`}>{product.rating[0].sold}</span>
+                            <span className={`${product.rating[0].reviews === "N/A" ? "hidden": ""}`}>{product.rating[0].reviews}</span>
+                            <span className={`${product.rating[0].rate === "N/A" ? "hidden": ""}`}>{product.rating[0].rate}</span>
+                        </div>
                         {product.offers.map((offer, idx) => (
                         <div key={idx} className="flex flex-col gap-2">
-                            <div className={`${product.rating.sold == "N/A" ? "hidden" : ""}`}>
-                                <span>{product.rating.sold}</span>
-                                <span>{product.rating.reviews}</span>
-                                <span>{product.rating.rate}</span>
-                            </div>
                             <span className="text-sm text-gray-500">{offer.availability != "" ? offer.availability : "In Stock"}</span>
                         </div>
                         ))}

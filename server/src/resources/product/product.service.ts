@@ -14,7 +14,7 @@ class ProductService {
     "building blocks": "https://www.aliexpress.com/w/wholesale-Blocks.html",
   };
 
-  private pages = 2;
+  private pages = 1;
 
   public async getAllProducts(): Promise<Product[] | Error> {
     try {
