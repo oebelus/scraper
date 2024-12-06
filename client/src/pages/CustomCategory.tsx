@@ -131,11 +131,11 @@ export default function CustomCategory() {
                     <div>
                         {product.offers.map((offer, idx) => (
                         <div key={idx} className="flex flex-col gap-2">
-                            <div>
-                                <span className={`${product.rating[0].sold == "N/A" ? "hidden" : ""}`}>{product.rating[0].sold}</span>
-                                <span className={`${product.rating[0].reviews == "N/A" ? "hidden" : ""}`}>{product.rating[0].reviews}</span>
-                                <span className={`${product.rating[0].rate == "N/A" ? "hidden" : ""}`}>{product.rating[0].rate}</span>
-                            </div>
+                            {/* <div>
+                                <span>{product.rating[0] != undefined ? product.rating[0].sold : product.rating.sold}</span>
+                                <span>{product.rating[0] != undefined ? product.rating[0].reviews : product.rating.reviews}</span>
+                                <span>{product.rating[0] != undefined ? product.rating[0].rate : product.rating.rate}</span>
+                            </div> */}
                             <span className="text-sm text-gray-500">{offer.availability != "" ? offer.availability : "In Stock"}</span>
                         </div>
                         ))}

@@ -89,6 +89,8 @@ class ProductService {
         await this.product.create(product);
       }
 
+      this.link = "https://www.aliexpress.com/w/wholesale-";
+
       return products;
     } catch (error) {
       if (error instanceof HttpException) {

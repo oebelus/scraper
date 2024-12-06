@@ -10,7 +10,7 @@ This is AliExpress scraper that:
 
 ![image 1](./media/1.png)
 
-You have the possibility to scrape them all -they are automatically saved in the database-, and then render each on of them in their corresponding section.
+You have the possibility to scrape the first 2 pages of the three categories -they are automatically saved in the database-, and then render each on of them in their corresponding section (It takes a long time).
 
 2- Scrape custom categories:
 
@@ -38,7 +38,7 @@ You can export generated data as a JSON format, or save it to your mongoDB datab
 
 ## To-Do
 
-- [ ] Find a better solution for the I'am not a robot checkbox.
+- [ ] Find a better solution for the `I'am not a robot` checkbox.
 
 ## Project Setup
 
