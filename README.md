@@ -1,8 +1,8 @@
 # Ali Express Scraper
 
-This is AliExpress scraper that:
+This is a AliExpress scraper that:
 
-1- Scrape from 3 categories:
+#### 1- Scrape from 3 categories:
 
 - Coffee Grinder
 - Laptops
@@ -26,7 +26,9 @@ Product Page:
 
 ![Product Page](./media/3.png)
 
-2- Scrape custom categories:
+> Note: In the `scrape()` [function](server/src/resources/scraper/scrape.ts), set the default value of `n` to a small value (10-20) to get the max amount of data you can scrape until I find a better way to bypass the I'm not a robot checkbox (I am open to suggestions), or change the number of pages to 1 instead of 2 [here](server/src/resources/product/product.service.ts) (each page contains 60 products).
+
+####  2- Scrape custom categories
 
 In the Custom Category Tab, you can scrape whatever category you want by inserting the category name and the number of items you want to retrieve.
 
