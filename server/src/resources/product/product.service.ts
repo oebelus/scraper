@@ -103,10 +103,8 @@ class ProductService {
 
   public async getAllCategories() {
     try {
-      console.log("Fetching unique categories...");
       const categories = await this.product.distinct("category");
 
-      console.log("Unique categories:", categories);
       return categories;
     } catch (error) {
       if (error instanceof HttpException) {

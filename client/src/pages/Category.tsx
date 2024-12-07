@@ -7,17 +7,8 @@ interface CategoryProps {
 }
 
 const Category = ({ title }: CategoryProps) => {
-    const [data, setData] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
-
-    const scrapeData = async () => {
-        await axios.post("http://localhost:3000/api/products/scrape")
-            .then((res) => {
-                console.log(res.data);
-                setData(res.data)
-            })
-            .catch((err) => console.log(err));
-    }
+    const [data, setData] = useState<Product[]>([]);
 
     useEffect(() => {
         const fetchProductsByCategory = async () => {
@@ -36,14 +27,6 @@ const Category = ({ title }: CategoryProps) => {
     return (
         <div>
             {loading && <p>Loading...</p>}
-            <div className="flex flex-col gap-4 mt-4 mb-10">
-                <button
-                    onClick={scrapeData}
-                    className="px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 transition-all"
-                >
-                    Scrape the first 2 pages of the 3 categories (It takes a long time)
-                </button>
-            </div>
 
             <h2 className="text-2xl font-bold mb-4">{title}</h2>
 

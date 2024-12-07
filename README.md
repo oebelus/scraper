@@ -12,6 +12,16 @@ This is AliExpress scraper that:
 
 You have the possibility to scrape the first 2 pages of the three categories -they are automatically saved in the database-, and then render each on of them in their corresponding section (It takes a long time).
 
+You'll get something like that in the console:
+
+```bash
+Scraping laptops...
+Scraping started...
+Scraping completed! 120 products found.
+Scraping building blocks...
+Scraping started...
+```
+
 2- Scrape custom categories:
 
 In the Custom Category Tab, you can scrape whatever category you want by inserting the category name and the number of items you want to retrieve.

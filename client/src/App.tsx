@@ -4,6 +4,7 @@ import "./index.css";
 import Category from "./pages/Category";
 import ProductPage from "./pages/ProductPage";
 import CustomCategory from "./pages/CustomCategory";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Sidebar />
         <div className="flex-1 p-6 bg-gray-900 text-white">
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/coffee-grinder" element={<Category title="Coffee Grinder" />} />
             <Route path="/laptops" element={<Category title="Laptops" />} />
             <Route path="/building-blocks" element={<Category title="Building Blocks" />} />
