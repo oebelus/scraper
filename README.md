@@ -22,6 +22,10 @@ Scraping building blocks...
 Scraping started...
 ```
 
+Product Page:
+
+![Product Page](./media/3.png)
+
 2- Scrape custom categories:
 
 In the Custom Category Tab, you can scrape whatever category you want by inserting the category name and the number of items you want to retrieve.
